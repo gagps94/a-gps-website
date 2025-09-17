@@ -13,7 +13,7 @@
     header p{margin:6px 0 0;}
     main{padding:18px;}
     .device{text-align:center; margin-bottom:18px;}
-    .device img{max-width:320px; border-radius:8px; border:1px solid #ddd; cursor:pointer;}
+    .device img{max-width:320px; border-radius:8px; border:1px solid #ddd;}
     .gallery{display:flex; flex-wrap:wrap; gap:12px; justify-content:center;}
     .card{background:#fff; border-radius:10px; padding:8px; width:180px; box-shadow:0 2px 6px rgba(0,0,0,0.08); text-align:center;}
     .card img{width:100%; height:120px; object-fit:cover; border-radius:6px;}
@@ -24,42 +24,9 @@
     .call{background:#28a745;}
     .zalo{background:#0068ff;}
     @media (max-width:600px){ .card{width:140px;} header h1{font-size:20px;} }
-    .device-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; justify-items:center; margin-top:12px;}
-    .device-grid img{max-width:220px; border-radius:8px; border:1px solid #ddd; cursor:pointer;}
-
-    /* Popup Modal */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0; top: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.6);
-    }
-    .modal-content {
-      background-color: #fff;
-      margin: 5% auto;
-      padding: 20px;
-      border-radius: 12px;
-      width: 80%;
-      max-width: 700px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      animation: fadeIn 0.3s ease-in-out;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .close {
-      float: right;
-      font-size: 24px;
-      cursor: pointer;
-      color: #666;
-    }
-    .close:hover {
-      color: red;
-    }
-  </style>
+  .device-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; justify-items:center; margin-top:12px;}
+.device-grid img{max-width:220px; border-radius:8px; border:1px solid #ddd;}
+</style>
 </head>
 <body>
   <header>
@@ -69,5 +36,36 @@
   </header>
 
   <main>
-    <!-- Thiết bị giám sát -->
-    <section
+    <section class="device">
+      <div class="device-grid">
+        <div><img src="images/device.jpg" alt="Thiết bị giám sát hành trình GA GPS"></div>
+        <div><img src="images/device2.png" alt="Thiết bị giám sát hành trình phụ"></div>
+        <div><img src="images/device3.png" alt="Thiết bị camera giám sát"></div>
+
+      </div>
+    </section>
+
+    <section class="vehicles">
+      <h2 style="text-align:center">Các loại xe đã trang bị</h2>
+      <div class="gallery">
+        <div class="card"><img src="images/contract.jpg" alt="Xe hợp đồng"><p>Xe hợp đồng</p></div>
+        <div class="card"><img src="images/bus.jpg" alt="Xe khách"><p>Xe khách</p></div>
+        <div class="card"><img src="images/container.jpg" alt="Xe container"><p>Xe container</p></div>
+        <div class="card"><img src="images/truck.jpg" alt="Xe tải"><p>Xe tải</p></div>
+        <div class="card"><img src="images/taxi.jpg" alt="Xe taxi"><p>Xe taxi</p></div>
+        <div class="card"><img src="images/bus2.jpg" alt="Xe bus"><p>Xe bus</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>☎ 0862.569.479 | 0772.528.907 | 0868.079.246 | 0913.294.007</p>
+    <p>© 2025 GA GPS</p>
+  </footer>
+
+  <div class="floating-buttons">
+    <a class="call" href="tel:0862569479">📞 Gọi ngay</a>
+    <a class="zalo" href="https://zalo.me/0862569479" target="_blank">💬 Chat Zalo</a>
+  </div>
+</body>
+</html>
