@@ -26,6 +26,46 @@
     .call{background:#28a745;}
     .zalo{background:#0068ff;}
     @media (max-width:600px){ .card{width:140px;} header h1{font-size:20px;} }
+
+    /* Popup CSS */
+    .popup {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      justify-content: center; align-items: center;
+    }
+    .popup-content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 480px;
+      text-align: left;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      animation: fadeIn 0.3s ease-in-out;
+    }
+    .popup-content h3 {color:#003366; margin-top:0; text-align:center;}
+    .popup-content p {margin:10px 0; line-height:1.5; text-align:center;}
+    .popup-content ul {margin:12px 0; padding-left:18px;}
+    .popup-content li {margin-bottom:8px;}
+    .popup-content a {color:#0068ff; text-decoration:none; font-weight:600;}
+    .popup-content a:hover {text-decoration:underline;}
+    .popup button {
+      display:block;
+      margin:14px auto 0;
+      padding:8px 16px;
+      border: none;
+      background: #003366;
+      color: #fff;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    @keyframes fadeIn {
+      from {opacity:0; transform:scale(0.9);}
+      to {opacity:1; transform:scale(1);}
+    }
   </style>
 </head>
 <body>
@@ -67,9 +107,43 @@
     <a class="zalo" href="https://zalo.me/0862569479" target="_blank">💬 Chat Zalo</a>
   </div>
 
+  <!-- Popup -->
+  <div id="popup" class="popup" onclick="closeOutside(event)">
+    <div class="popup-content">
+      <h3>Quy định pháp lý</h3>
+      <p>Các thiết bị giám sát hành trình và camera của GA GPS đều hợp chuẩn, hợp quy theo Bộ Công An và các Nghị định hiện hành:</p>
+      <ul>
+        <li>
+          <a href="https://thuvienphapluat.vn/van-ban/Giao-thong-Van-tai/Nghi-dinh-86-2014-ND-CP-kinh-doanh-va-dieu-kien-kinh-doanh-van-tai-bang-xe-o-to-239245.aspx" target="_blank">📑 Nghị định 86/2014/NĐ-CP</a> – Quy định ban đầu về kinh doanh vận tải.
+        </li>
+        <li>
+          <a href="https://thuvienphapluat.vn/van-ban/Giao-thong-Van-tai/Nghi-dinh-10-2020-ND-CP-quy-dinh-kinh-doanh-va-dieu-kien-kinh-doanh-van-tai-bang-xe-o-to-437641.aspx" target="_blank">📑 Nghị định 10/2020/NĐ-CP</a> – Thay thế NĐ 86, bắt buộc lắp hộp đen và camera.
+        </li>
+        <li>
+          <a href="https://thuvienphapluat.vn/van-ban/Giao-thong-Van-tai/Nghi-dinh-47-2022-ND-CP-sua-doi-Nghi-dinh-10-2020-ND-CP-522263.aspx" target="_blank">📑 Nghị định 47/2022/NĐ-CP</a> – Bổ sung yêu cầu truyền dữ liệu giám sát.
+        </li>
+        <li>
+          <a href="https://thuvienphapluat.vn/van-ban/Giao-thong-Van-tai/Thong-tu-12-2020-TT-BGTVT-dao-tao-sat-hach-cap-giay-phep-lai-xe-435563.aspx" target="_blank">📑 Thông tư 12/2020/TT-BGTVT</a> – Hướng dẫn chi tiết thi hành.
+        </li>
+        <li>
+          <a href="https://thuvienphapluat.vn/van-ban/Giao-thong-Van-tai/Thong-tu-02-2021-TT-BGTVT-sua-doi-58-2020-TT-BGTVT-465183.aspx" target="_blank">📑 Thông tư 02/2021/TT-BGTVT</a> – Sửa đổi, bổ sung một số quy định.
+        </li>
+      </ul>
+      <button onclick="closePopup()">Đóng</button>
+    </div>
+  </div>
+
   <script>
     function showMessage() {
-      alert("Thiết bị hợp chuẩn, hợp quy theo Nghị định hiện hành của Bộ GTVT.");
+      document.getElementById("popup").style.display = "flex";
+    }
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+    function closeOutside(event) {
+      if (event.target.id === "popup") {
+        closePopup();
+      }
     }
   </script>
 </body>
